@@ -4,7 +4,7 @@
   "description": "NASA Mission Project",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "start": "node src/server.js",
     "watch": "nodemon src/server.js",
     "cluster": "pm2 start src/server.js -i max"
@@ -12,10 +12,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "csv-parse": "^5.1.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "mongoose": "^6.3.8",
     "nasa-project": "file:..",
     "pm2": "^5.2.0"
   },
